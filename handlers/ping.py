@@ -4,7 +4,6 @@ import time
 from datetime import datetime
 
 import psutil
-from strings.filters import command
 from handlers import StartTime
 from helpers.filters import command
 from telegram.utils.helpers import escape_markdown, mention_html
@@ -41,7 +40,7 @@ def get_readable_time(seconds: int) -> str:
 
 async def help(client: Client, message: Message):
     await message.delete()
-    boottime = time.time()
+    boottime = time.time("/")
     bot_uptime = escape_markdown(get_readable_time((time.time() - StartTime)))
     cpu = psutil.cpu_percent(interval=0.5)
     mem = psutil.virtual_memory().percent
