@@ -4,7 +4,7 @@ import time
 from datetime import datetime
 
 import psutil
-
+from strings.filters import command
 from handlers import StartTime
 from helpers.filters import command
 from telegram.utils.helpers import escape_markdown, mention_html
