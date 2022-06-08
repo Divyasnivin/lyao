@@ -45,7 +45,7 @@ async def help(client: Client, message: Message):
     bot_uptime = escape_markdown(get_readable_time((time.time() - StartTime)))
     cpu = psutil.cpu_percent(interval=0.5)
     mem = psutil.virtual_memory().percent
-    disk = psutil.disk_usage("/").percent
+    disk = psutil.disk_usage().percent
     start = datetime.now()
     end = datetime.now()
     resp = (end - start).microseconds / 1000
